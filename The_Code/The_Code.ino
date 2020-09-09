@@ -1,11 +1,11 @@
 #define value A0
 #define rate A1
-void setup() 
+void setup()
 {
  pinMode(11,OUTPUT);
 }
 
-void loop() 
+void loop()
 {
  float x=analogRead(rate);
  if(x>=511.5)
@@ -15,12 +15,13 @@ void loop()
 }
 void statment1(float z)
 {
-  float a=0;
+  float a=analogRead(value);
   float b=a;
+  delayMicroseconds(5);
   a=analogRead(value);
   if(a>b)
   {
-    if(a>=z)
+    if(a==z)
     {
       digitalWrite(11,HIGH);
     }
@@ -28,12 +29,13 @@ void statment1(float z)
 }
 void statment2(float z)
 {
-  float a=0;
+  float a=analogRead(value);
   float b=a;
+  delayMicroseconds(5);
   a=analogRead(value);
   if(a<b)
   {
-    if(a<=z)
+    if(a==z)
     {
       digitalWrite(11,HIGH);
     }
